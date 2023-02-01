@@ -694,6 +694,7 @@ def fetch_llvm(llvm_folder, update, shallow, ref):
         ]
         subprocess.run(git_clone_cmd, check=True)
         subprocess.run(["git", "checkout", ref], check=True, cwd=llvm_folder)
+        subprocess.run(["python3", "llvm/utils/gn/build/write_vcsrevision.py", "--write-git-rev", "--name", "LLVM", "llvm/include/llvm/Support/VCSRevision.h"], check=True, cwd=llvm_folder)
 
 
 def cleanup(build_folder, incremental):
