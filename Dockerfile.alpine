@@ -1,0 +1,38 @@
+FROM alpine:edge
+
+RUN apk add --no-cache \
+	bash \
+	bc \
+	binutils-dev \
+	bison \
+	ccache \
+	clang15 \
+	cmake \
+	coreutils \
+	curl \
+	diffutils \
+	libelf \
+	elfutils-dev \
+	file \
+	findutils \
+	flex \
+	gcc \
+	git \
+	grep \
+	linux-headers \
+	lld \
+	make \
+	musl-dev \
+	ninja \
+	openssl-dev \
+	patchelf \
+	patch \
+	perf \
+	python3 \
+	tar \
+	texinfo \
+	u-boot-tools \
+	xz \
+	zlib-dev
+
+CMD ["bash", "/src/entrypoint.sh"]
