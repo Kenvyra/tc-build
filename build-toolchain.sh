@@ -18,9 +18,7 @@ msg "Building LLVM..."
 	--pgo kernel-defconfig \
 	--lto thin \
 	--shallow-clone \
-	--defines \
-	CMAKE_C_FLAGS="-march=znver3 -O3" \
-	CMAKE_CXX_FLAGS="-march=znver3 -O3"
+	--projects "clang;compiler-rt;lld;polly;bolt"
 
 # Build binutils
 # msg "Building binutils..."
